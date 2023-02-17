@@ -1,6 +1,6 @@
 import json
 import unittest
-from PJ_api_backend import app, employees
+from app import app, employees
 
 
 class TestAPI(unittest.TestCase):
@@ -14,9 +14,9 @@ class TestAPI(unittest.TestCase):
     # Test POST /api/v1/employees
     def test_add_employee(self):
         new_employee = {
-            "firstName": "PJ",
-            "lastName": "DACOSTA",
-            "emailId": "PJ.DACOSTA@gmail.com"
+            "firstName": "BB",
+            "lastName": "BABACI",
+            "emailId": "BABACINASSIM@gmail.com"
         }
         with app.test_client() as client:
             response = client.post('/api/v1/employees', json=new_employee)
@@ -29,9 +29,9 @@ class TestAPI(unittest.TestCase):
     def test_update_employee(self):
         employee_id = 1
         updated_employee = {
-            "firstName": "Mathieu",
-            "lastName": "Perotti",
-            "emailId": "Mathieu.Perotti@icloud.com"
+            "firstName": "YASSIN",
+            "lastName": "AINAS",
+            "emailId": "yassin.ainas@icloud.com"
         }
         with app.test_client() as client:
             response = client.put(f'/api/v1/employees/{employee_id}', json=updated_employee)
